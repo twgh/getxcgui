@@ -1,3 +1,10 @@
+# getxcgui
+<p>
+	<a href="https://github.com/twgh/getxcgui/releases"><img src="https://img.shields.io/badge/release-0.0.1-blue" alt="release"></a>
+	<a href="https://golang.org"> <img src="https://img.shields.io/badge/golang-1.17-blue" alt="golang"></a>
+	<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen" alt="License"></a>
+</p>
+
 ## 介绍
 
 本工具可以帮助下载xcgui.dll
