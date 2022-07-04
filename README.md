@@ -12,15 +12,15 @@
 ## 获取
 
 ```bash
-go install github.com/twgh/getxcgui@latest
+go install -ldflags="-s -w" github.com/twgh/getxcgui@latest
 ```
 
 ## Flags
 
 ```bash
--v	xcgui.dll 的版本号，默认为最新版本
--b	xcgui.dll 的位数，默认为64
--o	输出文件名，默认为“xcgui.dll”
+-v	xcgui.dll 的版本号，为空时默认最新版本
+-b	xcgui.dll 的位数，为空时默认64
+-o	输出文件名，为空时默认“xcgui.dll”
 ```
 
 ## 使用
@@ -31,7 +31,7 @@ go install github.com/twgh/getxcgui@latest
 getxcgui
 ```
 
-![cmd](https://s1.ax1x.com/2022/07/03/j8WP41.jpg)
+![cmd](https://s1.ax1x.com/2022/07/04/jJJNS1.png)
 
 #### 下载最新版本32位的dll到当前目录
 
