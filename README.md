@@ -1,7 +1,7 @@
 # getxcgui
 <p>
-	<a href="https://github.com/twgh/getxcgui/releases"><img src="https://img.shields.io/badge/release-0.0.1-blue" alt="release"></a>
-	<a href="https://golang.org"> <img src="https://img.shields.io/badge/golang-1.17-blue" alt="golang"></a>
+	<a href="https://github.com/twgh/getxcgui/releases"><img src="https://img.shields.io/badge/release-0.0.2-blue" alt="release"></a>
+	<a href="https://golang.org"> <img src="https://img.shields.io/badge/golang-1.16-blue" alt="golang"></a>
 	<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen" alt="License"></a>
 </p>
 
@@ -15,6 +15,8 @@
 go install -ldflags="-s -w" github.com/twgh/getxcgui@latest
 ```
 
+成功则`GOPATH`下的bin目录里会出现一个`getxcgui.exe`
+
 ## Flags
 
 ```bash
@@ -25,13 +27,19 @@ go install -ldflags="-s -w" github.com/twgh/getxcgui@latest
 
 ## 使用
 
-#### 默认下载最新版本64位的dll到当前目录
+#### (默认)下载最新版本64位的dll到当前目录
 
 ```bash
 getxcgui
 ```
 
 ![cmd](https://s1.ax1x.com/2022/07/04/jJJNS1.png)
+
+#### 下载最新版本64位的dll到`C:\Windows\System32`目录
+
+```bash
+getxcgui -o %windir%\system32\xcgui.dll
+```
 
 #### 下载最新版本32位的dll到当前目录
 
