@@ -23,19 +23,10 @@ func main() {
 	}
 	flag.Parse()
 
-	var err error
 	// 获取最新版本号
-	if *version == "latest" {
-		*version, err = getLatestVersion()
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-
-		if *version == "" {
-			fmt.Println("not getting the latest version")
-			return
-		}
+	*version = strings.TrimSpace(*version)
+	if *version == "" {
+		*version = "latest"
 	}
 
 	// 删首尾空
@@ -59,16 +50,16 @@ func main() {
 	}
 
 	// 开始下载dll
-	fmt.Printf("start download v%s, %d-bit, output: %s\n", *version, *bit, *output)
+	fmt.Printf("start download %s, %d-bit, output: %s\n", *version, *bit, *output)
 	quit := make(chan bool)
 	go func() {
-		for i := 0; i < 150; i++ { // 超过15秒就判定为下载失败
+		for i := 0; i < 1500; i++ { // 超过300秒就判定为下载失败
 			select {
 			case <-quit:
 				return
 			default:
 				fmt.Print(".")
-				time.Sleep(time.Millisecond * 100)
+				time.Sleep(time.Millisecond * 200)
 			}
 		}
 		fmt.Println("\ndownload failed")
@@ -82,7 +73,7 @@ func main() {
 		return
 	}
 
-	if len(dll) == 0 {
+	if len(dll) < 1.5*1024*1024 { // 小于1.5M肯定下载失败了
 		quit <- true
 		fmt.Println("download failed")
 		return
@@ -99,19 +90,7 @@ func main() {
 	fmt.Println("\ndownload successful")
 }
 
-// 获取最新版本号
-func getLatestVersion() (string, error) {
-	res, err := http.Get("https://pkggo.coding.net/p/xcgui/d/xcgui/git/raw/master/ver.txt?download=false")
-	if err != nil {
-		return "", err
-	}
-
-	body, err := io.ReadAll(res.Body)
-	res.Body.Close()
-	return string(body), err
-}
-
-// 从指定网址获取dll
+// 从指定网址下载dll
 func getDll(addr string) ([]byte, error) {
 	res, err := http.Get(addr)
 	if err != nil {
@@ -124,8 +103,8 @@ func getDll(addr string) ([]byte, error) {
 		return body, err
 	}
 
-	if bytes.Index(body, []byte("File not found")) != -1 {
-		return nil, errors.New("File not found.")
+	if bytes.Contains(body, []byte("File not found")) {
+		return nil, errors.New("file not found")
 	}
 	return body, err
 }
