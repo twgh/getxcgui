@@ -3,13 +3,13 @@
     "FileVersion": {
       "Major": 0,
       "Minor": 0,
-      "Patch": 4,
+      "Patch": 5,
       "Build": 0
     },
     "ProductVersion": {
       "Major": 0,
       "Minor": 0,
-      "Patch": 4,
+      "Patch": 5,
       "Build": 0
     },
     "FileFlagsMask": "3f",
@@ -22,14 +22,14 @@
     "Comments": "用于下载xcgui.dll",
     "CompanyName": "github.com/twgh",
     "FileDescription": "用于下载xcgui.dll",
-    "FileVersion": "v0.0.4.0",
+    "FileVersion": "v0.0.5.0",
     "InternalName": "getxcgui",
     "LegalCopyright": "Copyright (c) 2025 twgh",
     "LegalTrademarks": "",
     "OriginalFilename": "getxcgui",
     "PrivateBuild": "",
     "ProductName": "getxcgui",
-    "ProductVersion": "v0.0.4.0",
+    "ProductVersion": "v0.0.5.0",
     "SpecialBuild": ""
   },
   "VarFileInfo": {
