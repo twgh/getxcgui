@@ -1,6 +1,6 @@
 # getxcgui
 <p>
-	<a href="https://github.com/twgh/getxcgui/releases"><img src="https://img.shields.io/badge/release-0.0.4-blue" alt="release"></a>
+	<a href="https://github.com/twgh/getxcgui/releases"><img src="https://img.shields.io/badge/release-0.0.5-blue" alt="release"></a>
 	<a href="https://golang.org"> <img src="https://img.shields.io/badge/golang-≥1.16-blue" alt="golang"></a>
 	<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen" alt="License"></a>
 </p>
